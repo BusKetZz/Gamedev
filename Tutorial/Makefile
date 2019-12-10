@@ -1,6 +1,6 @@
-SOURCE_FILES = main.cpp player.cpp
-HEADER_FILES = player.h
-OBJECT_FILES = main.o player.o
+SOURCE_FILES = main.cpp 
+HEADER_FILES = 
+OBJECT_FILES = main.o
 CXX = g++
 CXXFLAGS = -std=c++11
 CXXFLAGS += -Wall -Wextra
