@@ -1,5 +1,3 @@
-#include "player.h"
-
 #include <SFML/Graphics.hpp>
 
 #include <iostream>
@@ -8,13 +6,11 @@
 
 int main(void)
 {
-    Player_t player;
+    sf::RenderWindow window(sf::VideoMode(800, 600), "SFML Window", 
+                            sf::Style::Titlebar | sf::Style::Close);
+    window.setFramerateLimit(60);
 
-    std::cout << "Health: " << player.health << '\n';
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Tutorial");
-
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+    std::cout << "Game started!" << std::endl;
 
     while(window.isOpen())
     {
@@ -25,12 +21,21 @@ int main(void)
             {
                 window.close();
             }
-        }
 
+            if(event.type == sf::Event::KeyPressed)
+            {
+                if(event.key.code == sf::Keyboard::Up)
+                {
+                    std::cout << "Up was pressed" << std::endl;
+                }
+            }
+        }
+        /* Logic handling */
+
+        /* Rendering part of the main game loop */
         window.clear();
-        window.draw(shape);
         window.display();
-    } 
+    }
 
     return 0;
 }
