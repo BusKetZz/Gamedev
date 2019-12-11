@@ -12,6 +12,17 @@ int main(void)
                             sf::Style::Titlebar | sf::Style::Close);
     window.setFramerateLimit(60);
 
+    sf::RectangleShape rectangle(sf::Vector2f(100, 50));
+    rectangle.setOrigin(sf::Vector2f(50, 25));
+    rectangle.setPosition(sf::Vector2f(400, 300));
+    rectangle.setFillColor(sf::Color(0, 255, 0));
+    rectangle.setOutlineColor(sf::Color(0, 0, 255));
+    rectangle.setOutlineThickness(5.0f);
+
+    sf::CircleShape circle(50.0f, 60);
+    circle.setOrigin(sf::Vector2f(25.0f, 25.0f));
+    circle.setFillColor(sf::Color(100, 100, 100));
+
     std::cout << "Game started!" << std::endl;
 
     while(window.isOpen())
@@ -61,10 +72,22 @@ int main(void)
         if(upKey == true)
         {
             std::cout << "Up key is currently held down!" << std::endl;
+            rectangle.setPosition(sf::Vector2f(350, 275));
         }
+
+        rectangle.move(0.2f, 0);
+        rectangle.rotate(1.0f);
+
+        circle.move(0.1f, 0.1f);
+        circle.rotate(1.0f);
 
         /* Rendering part of the main game loop */
         window.clear();
+
+        /* Draw things */
+        window.draw(rectangle);
+        window.draw(circle);
+
         window.display();
     }
 
