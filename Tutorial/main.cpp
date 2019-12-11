@@ -6,6 +6,8 @@
 
 int main(void)
 {
+    bool upKey = false;
+
     sf::RenderWindow window(sf::VideoMode(800, 600), "SFML Window", 
                             sf::Style::Titlebar | sf::Style::Close);
     window.setFramerateLimit(60);
@@ -26,7 +28,15 @@ int main(void)
             {
                 if(event.key.code == sf::Keyboard::Up)
                 {
-                    std::cout << "Up was pressed" << std::endl;
+                    upKey = true;
+                }
+            }
+
+            if(event.type == sf::Event::KeyReleased)
+            {
+                if(event.key.code == sf::Keyboard::Up)
+                {
+                    upKey = false;
                 }
             }
 
@@ -48,6 +58,10 @@ int main(void)
             }
         }
         /* Logic handling */
+        if(upKey == true)
+        {
+            std::cout << "Up key is currently held down!" << std::endl;
+        }
 
         /* Rendering part of the main game loop */
         window.clear();
