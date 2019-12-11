@@ -29,6 +29,23 @@ int main(void)
                     std::cout << "Up was pressed" << std::endl;
                 }
             }
+
+            if(event.type == sf::Event::MouseButtonPressed)
+            {
+                if(event.mouseButton.button == sf::Mouse::Left)
+                {
+                    std::cout << "Left mouse button was pressed!" << std::endl;
+                    std::cout << "Coordinates: x = " << event.mouseButton.x << 
+                    " y = " << event.mouseButton.y << std::endl;
+                }
+            }
+
+            if(event.type == sf::Event::MouseMoved)
+            {
+                std::cout << "Mouse moved!" << std::endl;
+                std::cout << "Coordinates: x = " << event.mouseMove.x << 
+                " y = " << event.mouseMove.y << std::endl;
+            }
         }
         /* Logic handling */
 
