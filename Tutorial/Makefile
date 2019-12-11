@@ -17,11 +17,8 @@ ${OBJECT_FILES}: ${SOURCE_FILES} ${HEADER_FILES}
 clean:
 	rm game ${OBJECT_FILES}
 
-# main.o: main.cpp player.h
+# main.o: main.cpp 
 # 	g++ -c main.cpp 
-
-# player.o: player.cpp player.h
-# 	g++ -c player.cpp
 
 # target: dependencies
 #           command(s)
