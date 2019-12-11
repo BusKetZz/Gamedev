@@ -12,16 +12,26 @@ int main(void)
                             sf::Style::Titlebar | sf::Style::Close);
     window.setFramerateLimit(60);
 
+    sf::Texture texture;
+    if(texture.loadFromFile("Textures/avatar.png") == false)
+    {
+        std::cout << "Texture loading failed!" << std::endl;
+    }
+
     sf::RectangleShape rectangle(sf::Vector2f(100, 50));
     rectangle.setOrigin(sf::Vector2f(50, 25));
     rectangle.setPosition(sf::Vector2f(400, 300));
-    rectangle.setFillColor(sf::Color(0, 255, 0));
     rectangle.setOutlineColor(sf::Color(0, 0, 255));
     rectangle.setOutlineThickness(5.0f);
+    rectangle.setTexture(&texture);
 
     sf::CircleShape circle(50.0f, 60);
     circle.setOrigin(sf::Vector2f(25.0f, 25.0f));
     circle.setFillColor(sf::Color(100, 100, 100));
+
+    sf::Sprite stormtrooper;
+    stormtrooper.setTexture(texture);
+    stormtrooper.setScale(0.5f, 0.5f);
 
     std::cout << "Game started!" << std::endl;
 
@@ -87,6 +97,7 @@ int main(void)
         /* Draw things */
         window.draw(rectangle);
         window.draw(circle);
+        window.draw(stormtrooper);
 
         window.display();
     }
