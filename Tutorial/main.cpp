@@ -1,3 +1,4 @@
+#include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 
 #include <iostream>
@@ -36,7 +37,7 @@ int main(void)
     sf::Font font;
     if(font.loadFromFile("Fonts/Avara.otf") == false)
     {
-        /* Code when failing */
+        /* TODO */
     }
 
     sf::Text text;
@@ -45,6 +46,23 @@ int main(void)
     text.setPosition(sf::Vector2f(250.0f, 0.0f));
     text.setFillColor(sf::Color(200, 100, 100));
     text.setStyle(sf::Text::Italic | sf::Text::Bold);
+
+    sf::SoundBuffer gateClosingBuffer;
+    if(gateClosingBuffer.loadFromFile("Sounds/gate_closing.wav") == false)
+    {
+        /* TODO */
+    }
+
+    sf::Sound gateClosingSound;
+    gateClosingSound.setBuffer(gateClosingBuffer);
+    gateClosingSound.play();
+
+    sf::Music music;
+    if(music.openFromFile("Sounds/basic_wind.wav") == false)
+    {
+        /* TODO */
+    }
+    music.play();
 
     std::cout << "Game started!" << std::endl;
 
