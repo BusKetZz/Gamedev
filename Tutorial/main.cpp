@@ -33,6 +33,19 @@ int main(void)
     stormtrooper.setTexture(texture);
     stormtrooper.setScale(0.5f, 0.5f);
 
+    sf::Font font;
+    if(font.loadFromFile("Fonts/Avara.otf") == false)
+    {
+        /* Code when failing */
+    }
+
+    sf::Text text;
+    text.setFont(font);
+    text.setString("Hello, this is text!");
+    text.setPosition(sf::Vector2f(250.0f, 0.0f));
+    text.setFillColor(sf::Color(200, 100, 100));
+    text.setStyle(sf::Text::Italic | sf::Text::Bold);
+
     std::cout << "Game started!" << std::endl;
 
     while(window.isOpen())
@@ -98,6 +111,7 @@ int main(void)
         window.draw(rectangle);
         window.draw(circle);
         window.draw(stormtrooper);
+        window.draw(text);
 
         window.display();
     }
