@@ -6,7 +6,7 @@ CXXFLAGS = -std=c++11
 CXXFLAGS += -Wall -Wextra
 # CXXFLAGS += -I/../SFML/SFML-2.5.1/include
 # LDFLAGS = -L/../SFML/SFML-2.5.1/lib
-LDLIBS = -lsfml-graphics -lsfml-audio -lsfml-window -lsfml-system -lsfml-audio
+LDLIBS = -lsfml-graphics -lsfml-window -lsfml-audio -lsfml-system
 
 game: ${OBJECT_FILES}
 	${CXX} ${CXXFLAGS} -o game ${OBJECT_FILES} ${LDFLAGS} ${LDLIBS}
