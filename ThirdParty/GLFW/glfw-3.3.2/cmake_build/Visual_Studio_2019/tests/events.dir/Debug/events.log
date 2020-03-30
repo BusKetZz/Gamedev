@@ -1,0 +1,6 @@
+﻿  Building Custom Rule C:/MORDOR/Workspace/Gamedev/glfw-3.3.2/tests/CMakeLists.txt
+  events.c
+  getopt.c
+  glad_gl.c
+  Generating Code...
+  events.vcxproj -> C:\MORDOR\Workspace\Gamedev\glfw-3.3.2\cmake_build\Visual_Studio_2019\tests\Debug\events.exe

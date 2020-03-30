@@ -1,0 +1,10 @@
+^C:\MORDOR\WORKSPACE\GAMEDEV\GLFW-3.3.2\CMAKE_BUILD\VISUAL_STUDIO_2019\CMAKEFILES\CB6A16A3CC855FED2834753E19FB0349\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/MORDOR/Workspace/Gamedev/glfw-3.3.2 -BC:/MORDOR/Workspace/Gamedev/glfw-3.3.2/cmake_build/Visual_Studio_2019 --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/MORDOR/Workspace/Gamedev/glfw-3.3.2/cmake_build/Visual_Studio_2019/GLFW.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

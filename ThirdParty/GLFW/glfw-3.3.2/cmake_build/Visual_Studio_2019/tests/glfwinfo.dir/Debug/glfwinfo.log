@@ -1,0 +1,7 @@
+﻿  Building Custom Rule C:/MORDOR/Workspace/Gamedev/glfw-3.3.2/tests/CMakeLists.txt
+  glfwinfo.c
+  getopt.c
+  glad_gl.c
+  glad_vulkan.c
+  Generating Code...
+  glfwinfo.vcxproj -> C:\MORDOR\Workspace\Gamedev\glfw-3.3.2\cmake_build\Visual_Studio_2019\tests\Debug\glfwinfo.exe
